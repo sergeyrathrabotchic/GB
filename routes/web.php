@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\NewController;
+use App\Http\Controllers\Admin\NewController as AdminNewController;
+use App\Http\Controllers\СategoryController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\RegistretionController;
+use App\Http\Controllers\EddNewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +18,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
+    Route::resource('/news',AdminNewController::class );
 });
+
+Route::get('/news', [ NewController::class, 'index'])
+    ->name('news.index');
+Route::get('/news/{id}', [ NewController::class, 'show'])
+    ->where( 'id', '\d+')
+    ->name('news.show');
+
+Route::get('/category', [ СategoryController::class, 'index'])
+    ->name('category.index');
+
+Route::get('/', [ MainController::class, 'index'])
+    ->name('main');
+
+Route::get('/registretion', [ RegistretionController::class, 'index'])
+    ->name('main');
+
+Route::get('/eddNews', [ EddNewsController::class, 'index'])
+    ->name('main');
+
