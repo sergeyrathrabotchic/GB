@@ -23,7 +23,7 @@ class Controller extends BaseController
                     'title' => $faker->jobTitle(),
                     'author' =>  $faker->userName(),
                     'image' => null,
-                    'deckription' => $faker->sentences(10),
+                    'deckription' =>"<strong>" . $faker->sentence(10) . "</strong>",
                     'categoryId' => 1
                 ];
             }
@@ -33,7 +33,7 @@ class Controller extends BaseController
                     'title' => $faker->jobTitle(),
                     'author' =>  $faker->userName(),
                     'image' => null,
-                    'deckription' => $faker->sentences(10),
+                    'deckription' =>"<strong>" . $faker->sentence(10) . "</strong>",
                     'categoryId' => 2
                 ];
             }
@@ -43,7 +43,7 @@ class Controller extends BaseController
                     'title' => $faker->jobTitle(),
                     'author' =>  $faker->userName(),
                     'image' => null,
-                    'deckription' => $faker->sentences(10),
+                    'deckription' =>"<strong>" . $faker->sentence(10) . "</strong>",
                     'categoryId' => 3
                 ];
             }
@@ -53,7 +53,7 @@ class Controller extends BaseController
                     'title' => $faker->jobTitle(),
                     'author' =>  $faker->userName(),
                     'image' => null,
-                    'deckription' => $faker->sentences(10),
+                    'deckription' =>"<strong>" . $faker->sentence(10) . "</strong>",
                     'categoryId' => 4
                 ];
             }
@@ -63,7 +63,7 @@ class Controller extends BaseController
                     'title' => $faker->jobTitle(),
                     'author' =>  $faker->userName(),
                     'image' => null,
-                    'deckription' => $faker->sentences(10),
+                    'deckription' =>"<strong>" . $faker->sentence(10) . "</strong>",
                     'categoryId' => 5
                 ];
             }        

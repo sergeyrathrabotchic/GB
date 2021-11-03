@@ -25,7 +25,7 @@ use App\Http\Controllers\EddNewsController;
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::resource('/news',AdminNewController::class );
 });
-
+//?categoryId={categoryId}
 Route::get('/news', [ NewController::class, 'index'])
     ->name('news.index');
 Route::get('/news/{id}', [ NewController::class, 'show'])

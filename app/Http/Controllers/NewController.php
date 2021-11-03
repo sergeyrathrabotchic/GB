@@ -10,6 +10,11 @@ class NewController extends Controller
     public function index() 
     {
         //dd($this->getNews());
+        /*$ategoryController = new СategoryController();
+        $category =$ategoryController->getСategory();
+        echo '<pre>'; 
+        print_r($category); 
+        echo '</pre>';*/
         return view('news.index', [
             'newsList' => $this->getNews(),
         ]);
