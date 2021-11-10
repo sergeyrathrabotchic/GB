@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Album example · Bootstrap v5.1</title>
+    <title>@section('title') News Site @show</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
     
@@ -36,7 +36,7 @@
   </head>
   <body>
     
-<header>
+<!--<header>
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
@@ -54,8 +54,8 @@
       </button>
     </div>
   </div>
-</header>
-
+</header>-->
+<x-header></x-header>
 <main>
 
   <div class="album py-5 bg-light">
@@ -219,7 +219,7 @@
 
 </main>
 
-<footer class="text-muted py-5">
+<!--<footer class="text-muted py-5">
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
@@ -227,11 +227,12 @@
     <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
     <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.1/getting-started/introduction/">getting started guide</a>.</p>
   </div>
-</footer>
+</footer>-->
+<x-footer></x-footer>
 
 
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}" ></script>
 
-      
+    @stack('js')
   </body>
 </html>

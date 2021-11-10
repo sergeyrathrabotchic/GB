@@ -1,4 +1,5 @@
 @extends('layosts.main')
+@section('title') Список новостей - @parent @stop
 @section('content')
       <!--<div class="col">
         <div class="card shadow-sm">
