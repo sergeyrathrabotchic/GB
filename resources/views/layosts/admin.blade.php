@@ -32,7 +32,7 @@
       }
     </style>  
     <!-- Custom styles for this template -->
-    <link href="{{asset('assets/css/dashboard.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/dashboard.min.css')}}" rel="stylesheet">
   </head>
   <body>   
 <!--<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">

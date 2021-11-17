@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class NewController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index',[
-            'newsList' => $this->getNews()
-        ]);
+        return view('admin.categories.index');
     }
 
     /**
@@ -26,7 +24,7 @@ class NewController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.categories.create');
     }
 
     /**
@@ -37,10 +35,7 @@ class NewController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => ['required', 'string']
-        ]);
-        dd($request->query());
+        //
     }
 
     /**
@@ -62,7 +57,7 @@ class NewController extends Controller
      */
     public function edit($id)
     {
-        //
+       //
     }
 
     /**

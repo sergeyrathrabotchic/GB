@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class NewController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index',[
-            'newsList' => $this->getNews()
-        ]);
+        return view('feedback.index');
     }
 
     /**
@@ -26,7 +23,7 @@ class NewController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        //
     }
 
     /**
@@ -38,9 +35,9 @@ class NewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => ['required', 'string']
+            'name' => ['required', 'string']
         ]);
-        dd($request->query());
+        dd($request->all());
     }
 
     /**

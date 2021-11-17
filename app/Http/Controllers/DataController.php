@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
-class NewController extends Controller
+class DataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index',[
-            'newsList' => $this->getNews()
-        ]);
+        return view('data.index');
     }
 
     /**
@@ -26,7 +24,7 @@ class NewController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        //
     }
 
     /**
@@ -37,10 +35,9 @@ class NewController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => ['required', 'string']
-        ]);
-        dd($request->query());
+        Storage::append('news','fff');
+        //file_put_contents(public_path('news'), "data", FILE_APPEND );
+        return 'work';
     }
 
     /**

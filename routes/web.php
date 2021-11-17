@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\Admin\NewController as AdminNewController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\СategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegistretionController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\EddNewsController;
+use App\Http\Controllers\Admin\IndexController as AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +27,16 @@ use App\Http\Controllers\EddNewsController;
 });*/
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
+    Route::get('/', AdminController::class)->name('index');
+    Route::resource('/categories', AdminCategoryController::class);
     Route::resource('/news',AdminNewController::class );
+
 });
 //?categoryId={categoryId}
 Route::get('/news', [ NewController::class, 'index'])
     ->name('news.index');
+
+    
 Route::get('/news/{id}', [ NewController::class, 'show'])
     ->where( 'id', '\d+')
     ->name('news.show');
@@ -38,6 +47,10 @@ Route::get('/category', [ СategoryController::class, 'index'])
 Route::get('/', [ MainController::class, 'index'])
     ->name('main');
 
+Route::resource('/feedback',  FeedbackController::class);
+
+Route::resource('/data',  DataController::class);
+   
 Route::get('/registretion', [ RegistretionController::class, 'index'])
     ->name('main');
 
