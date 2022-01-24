@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Models\NewsUser;
 
 class Controller extends BaseController
 {
@@ -16,7 +17,11 @@ class Controller extends BaseController
     {
         $faker = Factory::create();
         $data = [];
-        for ( $i = 0; $i < 25; $i++ ) {
+        $news = new NewsUser();
+        $data = $news->getNewsUser();
+        //dd($data);
+
+        /*for ( $i = 0; $i < 25; $i++ ) {
             if ($i >= 0 && $i <5 ){
                 $data[] = [
                     'id' => $i,
@@ -68,7 +73,7 @@ class Controller extends BaseController
                 ];
             }        
         }
-
+        dd($data);*/
         return $data;
     }
     public function getСategory() : array

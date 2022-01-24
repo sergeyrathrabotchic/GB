@@ -12,9 +12,9 @@
 
       <h2>Section title</h2>
       <div class="table-responsive">
-        @include('inc.message', [
+        @include('inc.message'/*, [
           'name' => 'Work'
-        ])
+        ]*/)
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -31,9 +31,9 @@
                   Это последняя итерация 
               @endif
                 <tr>
-                    <td>{{ $news['id'] +1}}</td>
-                    <td>{{ $news['title'] }}</td>
-                    <td>{{ $news['author'] }}</td>
+                    <td>{{ $news->id }}</td>
+                    <td>{{ $news->title }}</td>
+                    <td>{{ $news->author }}</td>
                     <td>{{ now()->format('d-m-Y H-i') }}</td>
                     <td>
                         <a href="">Ред.</a>&nbsp;|&nbsp;<a href="javascript:;" style="color: red">Уд.</a>
