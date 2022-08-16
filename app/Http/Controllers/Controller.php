@@ -72,8 +72,8 @@ class Controller extends BaseController
                     'categoryId' => 5
                 ];
             }        
-        }
-        dd($data);*/
+        }*/
+        //dd($data);
         return $data;
     }
     public function getСategory() : array

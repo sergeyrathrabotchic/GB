@@ -15,6 +15,7 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
+        
         //return response('Work')->header('Content-Type', 'text/html')/*view('admin.index')*/;
         //return response()->json($request->query());
 

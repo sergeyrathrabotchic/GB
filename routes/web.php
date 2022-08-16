@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::resource('/news',AdminNewController::class );
 
 });
+Route::resource('/news444444',AdminNewController::class );
 //?categoryId={categoryId}
 Route::get('/news', [ NewController::class, 'index'])
     ->name('news.index');
@@ -56,4 +57,11 @@ Route::get('/registretion', [ RegistretionController::class, 'index'])
 
 Route::get('/eddNews', [ EddNewsController::class, 'index'])
     ->name('main');
+
+Route::get('collection', function () {
+    $arr = ['Sergey', 'Andrey', 'gggg', 'hdjfhgdkgdk'];
+    $collection = collect($arr);
+    dd($collection->count() );
+
+});
 

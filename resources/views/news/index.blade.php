@@ -35,6 +35,7 @@
                 <p class="card-text"><strong>{{$news->title}}</strong> <br> {!!$news->description!!}.</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
+                2
                 <a href="{{route('news.show',['id' => $news->id,'categoryId' => $news->category_id])}}" class="btn btn-sm btn-outline-secondary">Смотреть подробние</a>
               </div>
                 <small class="text-muted">Автор: {{$news->author}} <br>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\СategoryController;
+use App\Models\News;
 
 class NewController extends Controller
 {
@@ -16,7 +17,7 @@ class NewController extends Controller
         print_r($category); 
         echo '</pre>';*/
         return view('news.index', [
-            'newsList' => $this->getNews(),
+            'newsList' => News::all()/*$this->getNews()*/,
         ]);
     }
     
