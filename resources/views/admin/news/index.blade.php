@@ -50,7 +50,7 @@
                   </tr>
               @endforelse
               <div>
-                {{ $newsList->links()}}
+                {{-- {{ $newsList->links()}} --}}
               </div>
             
           </tbody>

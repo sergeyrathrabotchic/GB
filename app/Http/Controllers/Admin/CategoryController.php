@@ -90,8 +90,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $request->validate([
+            'title' => ['required', 'string', 'min:3', 'max250']
+        ]);
         //validashin
-        dd($category->id());
+        //dd($category->id());
         $category->title = $request->input('title');
         $category->description = $request->input('description');
         /*$category = $category->fill(

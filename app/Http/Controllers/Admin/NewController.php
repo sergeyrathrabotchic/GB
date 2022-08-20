@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Http\Requests\EditNesRequest;
 
 class NewController extends Controller
 {
@@ -100,8 +101,10 @@ class NewController extends Controller
      * @param  News $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(EditNesRequest $request, News $news)
     {
+        //$request->validate();
+
         $news->title = $request->input('title');
         $news->description = $request->input('description');
         $news->author = $request->input('author');
